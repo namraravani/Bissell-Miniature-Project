@@ -1,0 +1,33 @@
+﻿@{
+    Layout = null;
+}
+@inherits System.Web.Mvc.WebViewPage<IEnumerable<BisselProject.Feature.Product.Models.Prod>>
+
+<!-- Link to an External CSS File -->
+<link rel="stylesheet" href="~/Content/Product.css" />
+
+<!-- Search Bar Section -->
+<form method="get" action="@Url.Action("Index", "ProductListing")">
+    <input type="text" name="searchTerm" id="search-input" class="search-input" placeholder="Search products..." value="@Request.QueryString["searchTerm"]" />
+    <button type="submit">Search</button>
+</form>
+
+<h2>Search Results: @Model.Count() Products Found</h2>
+
+<div class="product-listing-container">
+    @foreach (var product in Model)
+    {
+        <div class="product-item" data-title="@product.Title" data-brand="@product.Brand">
+            <h4>@product.Title (@product.ItemType)</h4>
+            <p>@product.Description</p>
+            <p>SKU: <span class="sku">@product.SKU</span></p>
+            <p>Brand: @product.Brand</p>
+            <p>Status: @product.AvailabilityStatus</p>
+            <p class="price">Price: $@product.Price</p>
+            <p>Case Quantity: @product.CaseQuantity</p>
+        </div>
+    }
+</div>
+
+
+

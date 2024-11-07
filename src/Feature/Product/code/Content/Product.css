@@ -1,0 +1,84 @@
+﻿/* Product Listing Styles */
+.product-listing-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.product-item {
+    width: calc(33% - 20px); /* Three columns layout */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+    .product-item h4 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    .product-item p {
+        font-size: 0.9rem;
+        color: #666;
+        margin-bottom: 8px;
+    }
+
+    .product-item .price {
+        font-weight: bold;
+        color: #333;
+    }
+
+    /* Hover effect for product cards */
+    .product-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+/* Search Bar Styles */
+.search-bar-container {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.search-input {
+    width: 50%; /* Set to 50% of the page width */
+    height: 45px; /* Increase height for a larger search bar */
+    padding: 0 15px; /* Add padding for text inside */
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 25px; /* Make the edges curved */
+    box-sizing: border-box;
+    transition: border 0.3s ease;
+    background-color: #f9f9f9; /* Light background color */
+}
+
+    /* Focus effect */
+    .search-input:focus {
+        border-color: #007bff;
+        outline: none;
+        background-color: #fff; /* White background on focus */
+    }
+
+    /* Placeholder text color */
+    .search-input::placeholder {
+        color: #bbb;
+    }
+
+/* Make the search input responsive */
+@media (max-width: 768px) {
+    .search-input {
+        width: 80%; /* Set to 80% on medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .search-input {
+        width: 90%; /* Set to 90% on small screens */
+    }
+}

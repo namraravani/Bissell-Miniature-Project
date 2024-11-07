@@ -1,0 +1,19 @@
+﻿---
+ID: "3a289c5d-5e99-4c14-9f60-348c5868c3a6"
+Parent: "7b4668d8-b3fe-48f9-bd95-77960c8c2794"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
+Path: /sitecore/templates/Feature/ProductOrPart/Content
+DB: master
+SharedFields:
+- ID: "e2e2b75d-a2f7-4075-bde2-d13306e9e350"
+  Hint: Collapsed by Default
+  Type: checkbox
+  Value: 0
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20241104T063622Z
