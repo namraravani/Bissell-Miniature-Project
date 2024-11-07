@@ -12,7 +12,7 @@ namespace BisselProject.Feature.Product.Models
         public string Brand { get; set; }
 
        
-        public string Title { get; set; }
+        public string ProductTitle { get; set; }
 
         
         public string Description { get; set; }

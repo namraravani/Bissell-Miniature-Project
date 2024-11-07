@@ -17,8 +17,8 @@
 <div class="product-listing-container">
     @foreach (var product in Model)
     {
-        <div class="product-item" data-title="@product.Title" data-brand="@product.Brand">
-            <h4>@product.Title (@product.ItemType)</h4>
+        <div class="product-item" data-title="@product.ProductTitle" data-brand="@product.Brand">
+            <h4>@product.ProductTitle (@product.ItemType)</h4>
             <p>@product.Description</p>
             <p>SKU: <span class="sku">@product.SKU</span></p>
             <p>Brand: @product.Brand</p>

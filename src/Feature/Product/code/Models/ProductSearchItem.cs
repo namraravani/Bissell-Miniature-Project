@@ -15,7 +15,7 @@ namespace BisselProject.Feature.Product.Models
         public string Brand { get; set; }
 
         [IndexField("title")]
-        public string Title { get; set; }
+        public string ProductTitle { get; set; }
 
         [IndexField("description")]
         public string Description { get; set; }
