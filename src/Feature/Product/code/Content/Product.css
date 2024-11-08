@@ -4,76 +4,158 @@
     flex-wrap: wrap;
     gap: 20px;
     margin-top: 20px;
+    justify-content: center; /* Center the products horizontally */
 }
 
 .product-item {
     width: calc(33% - 20px); /* Three columns layout */
     background-color: #fff;
-    border: 1px solid #ddd;
+    border: 1px solid #e0e0e0;
     border-radius: 8px;
     padding: 20px;
     box-sizing: border-box;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Increased shadow for depth */
+    transition: all 0.3s ease-in-out;
+    position: relative; /* Ensure product titles are not cut off */
+    overflow: hidden; /* Hide content that overflows */
+    text-align: center;
+    height: 350px; /* Fixed height for uniformity */
 }
 
     .product-item h4 {
-        font-size: 1.2rem;
-        margin-bottom: 10px;
+        font-size: 1.25rem; /* Slightly larger font size */
+        margin-bottom: 15px;
         color: #333;
+        font-weight: 600; /* Make the title bolder */
     }
 
     .product-item p {
-        font-size: 0.9rem;
+        font-size: 1rem;
         color: #666;
-        margin-bottom: 8px;
+        margin-bottom: 12px;
+        line-height: 1.4;
     }
 
+    /* Price Styling */
     .product-item .price {
+        font-size: 1.2rem;
         font-weight: bold;
-        color: #333;
+        color: #e74c3c; /* Red color for price to make it pop */
+        margin-bottom: 15px;
+    }
+
+    .product-item .sku, .product-item .availability-status {
+        font-size: 0.9rem;
+        color: #888;
     }
 
     /* Hover effect for product cards */
     .product-item:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        transform: translateY(-10px); /* Lift effect */
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Larger shadow for emphasis */
     }
+
+    .product-item img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px; /* Rounded corners for product images */
+        object-fit: contain; /* Ensures the image aspect ratio is maintained */
+        margin-bottom: 15px;
+    }
+
+    /* Add an overlay effect for product images */
+    .product-item:hover img {
+        opacity: 0.8; /* Slightly darken the image on hover */
+    }
+
+    /* Button styling */
+    .product-item .btn {
+        padding: 10px 15px;
+        background-color: #007bff; /* Primary button color */
+        color: #fff;
+        font-weight: bold;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin-top: 10px;
+    }
+
+        .product-item .btn:hover {
+            background-color: #0056b3; /* Darken the button color on hover */
+        }
 
 /* Search Bar Styles */
 .search-bar-container {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     text-align: center;
+    position: relative;
+    z-index: 2;
 }
 
 .search-input {
     width: 50%; /* Set to 50% of the page width */
-    height: 45px; /* Increase height for a larger search bar */
-    padding: 0 15px; /* Add padding for text inside */
-    font-size: 1rem;
+    height: 45px; /* Increased height for a larger search bar */
+    padding: 0 15px;
+    font-size: 1.1rem;
     border: 1px solid #ddd;
-    border-radius: 25px; /* Make the edges curved */
+    border-radius: 25px;
     box-sizing: border-box;
+    background-color: #f9f9f9;
     transition: border 0.3s ease;
-    background-color: #f9f9f9; /* Light background color */
+    background-color: #f7f7f7; /* Lighter background */
+    text-align: center;
 }
 
-    /* Focus effect */
     .search-input:focus {
         border-color: #007bff;
         outline: none;
         background-color: #fff; /* White background on focus */
     }
 
-    /* Placeholder text color */
     .search-input::placeholder {
         color: #bbb;
     }
 
-/* Make the search input responsive */
+.search-bar-container button {
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background-color 0.3s ease;
+}
+
+    .search-bar-container button:hover {
+        background-color: #0056b3;
+    }
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .product-item {
+        width: calc(50% - 20px); /* Two columns layout on medium screens */
+    }
+}
+
 @media (max-width: 768px) {
+    .product-item {
+        width: calc(100% - 20px); /* One column layout on smaller screens */
+    }
+
     .search-input {
-        width: 80%; /* Set to 80% on medium screens */
+        width: 80%;
+    }
+
+    .search-bar-container button {
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
     }
 }
 

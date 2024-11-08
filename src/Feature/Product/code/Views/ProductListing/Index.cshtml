@@ -14,7 +14,8 @@
 
 <h2>Search Results: @Model.Count() Products Found</h2>
 
-<div class="product-listing-container">
+<!-- Scrollable Product Container -->
+<div class="product-listing-container" style="height: 600px;"overflow-y: auto;">
     @foreach (var product in Model)
     {
         <div class="product-item" data-title="@product.ProductTitle" data-brand="@product.Brand">
@@ -28,6 +29,3 @@
         </div>
     }
 </div>
-
-
-

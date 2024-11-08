@@ -4,32 +4,29 @@ using Sitecore.ContentSearch;
 namespace BisselProject.Feature.Product.Models
 {
     public class ProductSearchItem
-    {
-        [IndexField("templateid")]
-        public string TemplateId { get; set; }
-
-        [IndexField("sku")]
+    {      
+        [IndexField("SKU")]
         public string SKU { get; set; }
 
-        [IndexField("brand")]
+        [IndexField("Brand")]
         public string Brand { get; set; }
 
-        [IndexField("title")]
+        [IndexField("ProductTitle")]
         public string ProductTitle { get; set; }
 
-        [IndexField("description")]
+        [IndexField("Description")]
         public string Description { get; set; }
 
-        [IndexField("availabilitystatus")]
+        [IndexField("AvailabilityStatus")]
         public string AvailabilityStatus { get; set; }
 
-        [IndexField("price")]
+        [IndexField("Price")]
         public decimal Price { get; set; }
 
-        [IndexField("casequantity")]
+        [IndexField("CaseQuantity")]
         public int CaseQuantity { get; set; }
 
-        [IndexField("itemtype")]
+        [IndexField("ItemType")]
         public string ItemType { get; set; }
     }
 }
